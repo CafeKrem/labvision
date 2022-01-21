@@ -1,4 +1,4 @@
-FROM pachyderm/opencv
+FROM francoisgervais/opencv-python
 COPY image.jpeg /app/image/image1.jpeg 
 COPY color_analysis.py /app/script/color_analysis.py
 RUN apt update -y
