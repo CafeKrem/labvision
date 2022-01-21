@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: openCV_docker_app
+  labels:
+    app: openCV
+spec:
+  containers:
+  - name: openCVApp
+    image: test:pythonOpenCV
