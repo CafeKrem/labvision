@@ -1,5 +1,8 @@
 ## Tutorial and Code: Image analysis with a Raspberry Pi and OpenCV. 
 
+### CafeKrem fork 
+
+my fork is here to test dockerisation of an openCV application and try to run it on a kubernetes cluster.
 
 ### QUICKSTART
 
