@@ -1,5 +1,6 @@
 # From https://www.pyimagesearch.com/2014/08/04/opencv-python-color-detection/
 # import the necessary packages
+from os import wait
 import sys
 sys.path.append('/home/pi/.local/lib/python3.5/site-packages')
 import numpy as np
@@ -38,15 +39,18 @@ for (lower, upper) in boundaries:
     abovethreshold_pixels = (output_norm > 1).sum()
     norm_abovethreshold = (abovethreshold_pixels/total_pixels)*100
     print(total_pixels, abovethreshold_pixels, norm_abovethreshold )
+    
+    for i in range(100000):
+        print("kello")
     if norm_abovethreshold > 10:
         print (filename1, "Red in frame")
-	f = open('binary.csv','a')
-	f.write(filename1+', 1 \n') #Give your csv text here.
-	## Python will convert \n to os.linesep
-	f.close()
+        f = open('binary.csv','a')
+        f.write(filename1+', 1 \n') #Give your csv text here.
+    ## Python will convert \n to os.linesep
+        f.close()
     elif norm_abovethreshold <= 10:
         print (filename1, "NO Red in frame")
-	f = open('binary.csv','a')
+        f = open('binary.csv','a')
         f.write(filename1+', 0 \n') #Give your csv text here.
         ## Python will convert \n to os.linesep
         f.close()
