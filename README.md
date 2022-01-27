@@ -4,7 +4,6 @@
 
 my fork is here to test dockerisation of an openCV application and try to run it on a kubernetes cluster.
 
-
 ### QUICKSTART
 
 This code takes a picture using webcam(s) and segments it into RGB using a python script. The images are then placed on a webstream. 
