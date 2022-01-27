@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-opencv
+spec:
+  selector:
+    app: camera-stream-opencv
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: 9001
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-opencv
+  labels:
+    app: camera-stream-opencv
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: camera-stream-opencv
+  template:
+    metadata:
+      labels:
+        app: camera-stream-opencv
+    spec:
+      containers:
+      - name: myopen-cv-image
+        image: opencv
+        ports:
+        - containerPort: 9001
