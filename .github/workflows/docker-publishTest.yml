@@ -22,7 +22,7 @@ env:
 
 jobs:
   build:
-
+    environment: dockerhub
     runs-on: ubuntu-latest
     permissions:
       contents: read
